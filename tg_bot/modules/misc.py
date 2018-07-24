@@ -236,19 +236,13 @@ def info(bot: Bot, update: Update, args: List[str]):
         return
 
     text = "<b>User info</b>:" \
-           "\nID: <code>{}</code>" \
-           "\nFirst Name: {}".format(user.id, html.escape(user.first_name))
-
-    if user.last_name:
-        text += "\nLast Name: {}".format(html.escape(user.last_name))
-
+           "\n🆔: <code>{}</code>" \
+           "\n👤: {}".format(user.id, html.escape(user.first_name))
     if user.username:
-        text += "\nUsername: @{}".format(html.escape(user.username))
-
-    text += "\nPermanent user link: {}".format(mention_html(user.id, "link"))
+        text += "\n💬: @{}".format(html.escape(user.username))
 
     if user.id == OWNER_ID:
-        text += "\n\nThis person is my owner - I would never do anything against them!"
+        text += "\n\nThis is my owner! stay away from him"
     else:
         if user.id in SUDO_USERS:
             text += "\nThis person is one of my sudo users! " \
