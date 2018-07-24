@@ -18,19 +18,24 @@ from tg_bot.modules.helper_funcs.chat_status import is_user_admin
 from tg_bot.modules.helper_funcs.misc import paginate_modules
 
 PM_START_TEXT = """
-Hi {}, my name is {}! If you have any questions on how to use me, read /help - and then head to @MarieSupport.
+Hi {} 😍 My name is {} , I am a group management bot with some basic functions...
 
-I'm a group manager bot maintained by [this wonderful person](tg://user?id={}). I'm built in python3, using the \
-python-telegram-bot library, and am fully opensource - you can find what makes me tick \
-[here](github.com/PaulSonOfLars/tgbot)!
+These Are My Features :
 
-Feel free to submit pull requests on github, or to contact my support group, @MarieSupport, with any bugs, questions \
-or feature requests you might have :)
-I also have a news channel, @MarieNews for announcements on new features, downtime, etc.
+• /ban user - Bans a user from the current chat. This command can only be used by moderators and administrators of a supergroup.
+  
+• /warn user - Warns a user from the current chat After 3 warns, the user will be banned from the group. Can also be used as a reply. This command can only be used by moderators and administrators of a supergroup.
 
-You can find the list of available commands with /help.
+• /kick user - Kicks a user from the current chat. This command can only be used by moderators and administrators of a supergroup.
 
-If you're enjoying using me, and/or would like to help me survive in the wild, hit /donate to help fund/upgrade my VPS!
+• /afk note - Mark yourself as away from keyboard, with an optional note that will be displayed to users who mention you whilst you're away. You must have an @username for this feature to work.
+
+• /info       - get information about a user.
+
+• /slap       - slap a user, or get slapped if not a reply.
+
+More features will added soon... Do Join at @GFatherNews For Updates 👏🏻
+
 """
 
 HELP_STRINGS = """
@@ -418,23 +423,11 @@ def main():
     test_handler = CommandHandler("test", test)
     start_handler = CommandHandler("start", start, pass_args=True)
 
-    help_handler = CommandHandler("help", get_help)
-    help_callback_handler = CallbackQueryHandler(help_button, pattern=r"help_")
-
-    settings_handler = CommandHandler("settings", get_settings)
-    settings_callback_handler = CallbackQueryHandler(settings_button, pattern=r"stngs_")
-
-    donate_handler = CommandHandler("donate", donate)
     migrate_handler = MessageHandler(Filters.status_update.migrate, migrate_chats)
 
     # dispatcher.add_handler(test_handler)
     dispatcher.add_handler(start_handler)
-    dispatcher.add_handler(help_handler)
-    dispatcher.add_handler(settings_handler)
-    dispatcher.add_handler(help_callback_handler)
-    dispatcher.add_handler(settings_callback_handler)
     dispatcher.add_handler(migrate_handler)
-    dispatcher.add_handler(donate_handler)
 
     # dispatcher.add_error_handler(error_callback)
 
