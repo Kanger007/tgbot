@@ -245,16 +245,13 @@ def info(bot: Bot, update: Update, args: List[str]):
         text += "\n\nThis is my owner! stay away from him"
     else:
         if user.id in SUDO_USERS:
-            text += "\nThis person is one of my sudo users! " \
-                    "Nearly as powerful as my owner - so watch it."
+            text += "\nThis person is a sudo user.. as powerful as the owner.. so watch out 😉"
         else:
             if user.id in SUPPORT_USERS:
-                text += "\nThis person is one of my support users! " \
-                        "Not quite a sudo user, but can still gban you off the map."
+                text += "\nThis person is one of my support users!."
 
             if user.id in WHITELIST_USERS:
-                text += "\nThis person has been whitelisted! " \
-                        "That means I'm not allowed to ban/kick them."
+                text += "\nThis person has been whitelisted! I can't ban or kick him 🤥"
 
     for mod in USER_INFO:
         mod_info = mod.__user_info__(user.id).strip()
