@@ -157,7 +157,7 @@ def start(bot: Bot, update: Update, args: List[str]):
                 PM_START_TEXT.format(escape_markdown(first_name), escape_markdown(bot.first_name), OWNER_ID),
                 parse_mode=ParseMode.MARKDOWN)
     else:
-        update.effective_message.reply_text("Hey, I'm GodFather 🌹.
+        update.effective_message.reply_text("""Hey, I'm GodFather 🌹.
 Nice to meet you!
 
 I am here to control over your groups under your commands.
@@ -166,7 +166,7 @@ I'm more than just a bot, but i'm in my development stage
 
 
 Support: @Mariebotmalayalamsupport
-Channel: @GFatherNews")
+Channel: @GFatherNews""")
 
 
 # for test purposes
