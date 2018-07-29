@@ -387,9 +387,6 @@ ID_HANDLER = DisableAbleCommandHandler("id", get_id, pass_args=True)
 IP_HANDLER = CommandHandler("ip", get_bot_ip, filters=Filters.chat(OWNER_ID))
 
 TIME_HANDLER = CommandHandler("time", get_time, pass_args=True)
-
-RUNS_HANDLER = DisableAbleCommandHandler("runs", runs)
-SLAP_HANDLER = DisableAbleCommandHandler("slap", slap, pass_args=True)
 INFO_HANDLER = DisableAbleCommandHandler("info", info, pass_args=True)
 
 ECHO_HANDLER = CommandHandler("echo", echo, filters=Filters.user(OWNER_ID))
@@ -401,8 +398,6 @@ GDPR_HANDLER = CommandHandler("gdpr", gdpr, filters=Filters.private)
 dispatcher.add_handler(ID_HANDLER)
 dispatcher.add_handler(IP_HANDLER)
 dispatcher.add_handler(TIME_HANDLER)
-dispatcher.add_handler(RUNS_HANDLER)
-dispatcher.add_handler(SLAP_HANDLER)
 dispatcher.add_handler(INFO_HANDLER)
 dispatcher.add_handler(ECHO_HANDLER)
 dispatcher.add_handler(MD_HELP_HANDLER)
