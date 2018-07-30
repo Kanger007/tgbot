@@ -18,25 +18,10 @@ from tg_bot.modules.helper_funcs.chat_status import is_user_admin
 from tg_bot.modules.helper_funcs.misc import paginate_modules
 
 PM_START_TEXT = """
-Hi {} 😍 My name is {} , I am a group management bot with some basic functions...
-
-These Are My Features :
-
-• /ban user - Bans a user from the current chat. This command can only be used by moderators and administrators of a supergroup.
-  
-• /warn user - Warns a user from the current chat After 3 warns, the user will be banned from the group. Can also be used as a reply. This command can only be used by moderators and administrators of a supergroup.
-
-• /kick user - Kicks a user from the current chat. This command can only be used by moderators and administrators of a supergroup.
-
-• /afk note - Mark yourself as away from keyboard, with an optional note that will be displayed to users who mention you whilst you're away. You must have an @username for this feature to work.
-
-• /info       - get information about a user.
-
-• /slap       - slap a user, or get slapped if not a reply.
-
-More features will added soon... Do Join at @GFatherNews For Updates 👏🏻
+Hi {} 😍 My name is {} , Happy Telegramming ❤...
 
 """
+
 
 HELP_STRINGS = """
 Hey there! My name is *{}*.
@@ -157,16 +142,7 @@ def start(bot: Bot, update: Update, args: List[str]):
                 PM_START_TEXT.format(escape_markdown(first_name), escape_markdown(bot.first_name), OWNER_ID),
                 parse_mode=ParseMode.MARKDOWN)
     else:
-        update.effective_message.reply_text("""Hey, I'm GodFather 🌹.
-Nice to meet you!
-
-I am here to control over your groups under your commands.
-
-I'm more than just a bot, but i'm in my development stage
-
-
-Support: @Mariebotmalayalamsupport
-Channel: @GFatherNews""")
+        update.effective_message.reply_text("""Hey there, i'm alive """)
 
 
 # for test purposes
