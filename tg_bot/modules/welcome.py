@@ -471,9 +471,9 @@ __help__ = """
 __mod_name__ = "Welcomes/Goodbyes"
 
 
-WELC_PREF_HANDLER = CommandHandler("welcome", welcome, pass_args=True, filters=Filters.group)
-GOODBYE_PREF_HANDLER = CommandHandler("goodbye", goodbye, pass_args=True, filters=Filters.group)
-SET_WELCOME = CommandHandler("setwelcome", set_welcome, filters=Filters.group)
+WELC_PREF_HANDLER = CommandHandler("welcomestats", welcome, pass_args=True, filters=Filters.group)
+GOODBYE_PREF_HANDLER = CommandHandler("goodbyestats", goodbye, pass_args=True, filters=Filters.group)
+SET_WELCOME = CommandHandler("welcome", set_welcome, filters=Filters.group)
 SET_GOODBYE = CommandHandler("setgoodbye", set_goodbye, filters=Filters.group)
 RESET_WELCOME = CommandHandler("resetwelcome", reset_welcome, filters=Filters.group)
 RESET_GOODBYE = CommandHandler("resetgoodbye", reset_goodbye, filters=Filters.group)
